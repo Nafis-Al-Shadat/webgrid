@@ -3,6 +3,7 @@
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  user-select:none;
 }
 
 /* navbar  */
@@ -53,17 +54,18 @@ font-size: 1.2em;
     font-size: 3.4rem;
     font-weight: 600;
 }
-#changing-h1{
+#changing-h1 {
     animation-name: appear;
     animation-duration: 2s;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
     background-image: linear-gradient(45deg, #e7970d, #fdcf4e);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-}
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+} /* এই ব্র্যাকেটটি মিসিং ছিল */
+
 #main-section-left-box p{
     color: #969696;
 }
@@ -71,6 +73,23 @@ font-size: 1.2em;
     color: #F59E0B;
     margin-top: 0;
     padding-top: 0;
+}
+.btn-contact-now{
+    background-color: #F59E0B;
+    border: none;
+    padding: 10px 20px;
+    transition: background-color 1s ease,box-shadow 1s ease;
+}
+.btn-contact-now:hover{
+
+    background-color:#fdd976;
+    box-shadow: 0px 0px 10px 2px #f5ab0b40;
+}
+.btn-contact-now:active{
+    background-color: #F59E0B;
+    transform: translateY(1px);
+
+    
 }
 #main-section-right-box{
     position: relative;
@@ -88,11 +107,12 @@ font-size: 1.2em;
 #logo-container{
     width:100%;
 }
+
 #laptop{
     position: relative;
     margin-left: 10%;
     width: 80%;
-    z-index: 1000;
+    z-index: 10;
 }
 #gear1{
     position: absolute;
@@ -121,6 +141,1499 @@ font-size: 1.2em;
     width:10%;
 }
 
+/* services section */
+
+/* মূল সেকশনের ডিজাইন */
+.services-section {
+  background-color: #0d131f; /* আপনার আগের ছবির ডার্ক থিমের সাথে মেলানো */
+  padding: 60px 20px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.services-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.services-header h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.services-header p {
+  color: #94a3b8;
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* স্লাইডার কনটেইনার */
+.services-slider {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* স্লাইডারের দুই পাশে হালকা ডার্ক শ্যাডো (দেখতে সুন্দর লাগবে) */
+.services-slider::before,
+.services-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 2;
+}
+.services-slider::before {
+  left: 0;
+  background: linear-gradient(to right, #0d131f 0%, transparent 100%);
+}
+.services-slider::after {
+  right: 0;
+  background: linear-gradient(to left, #0d131f 0%, transparent 100%);
+}
+
+/* অটো-স্ক্রল অ্যানিমেশন */
+.services-track {
+  display: flex;
+  width: max-content;
+  animation: scrollCards 25s linear infinite;
+}
+
+/* মাউস হোভার করলে স্ক্রলিং থেমে যাবে, যাতে ইউজার পড়তে পারে */
+.services-track:hover {
+  animation-play-state: paused;
+}
+
+.slide-group {
+  display: flex;
+  gap: 24px;
+  padding-right: 24px;
+}
+
+/* কার্ডের ডিজাইন */
+.service-card {
+  width: 320px; /* কার্ডের সাইজ */
+  background-color: #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px); /* হোভার করলে কার্ড একটু উপরে উঠবে */
+}
+
+.service-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 24px;
+}
+
+.card-content h3 {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+
+.card-content .role {
+  color: #f59e0b; /* হলুদ/কমলা রঙ */
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.card-content p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* লুপ অ্যানিমেশনের কি-ফ্রেম */
+@keyframes scrollCards {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* মোবাইল ডিভাইসের জন্য রেসপন্সিভ ডিজাইন */
+@media (max-width: 768px) {
+  .service-card {
+    width: 280px;
+  }
+  .services-header h2 {
+    font-size: 1.8rem;
+  }
+}
+/* why us */
+/* Scoped variables for the BarberKraft section to prevent clashing */
+/* -----------------------------
+   Base & Variables
+----------------------------- */
+.bk-section {
+  --bk-bg-color: #080d17;
+  --bk-text-main: #ffffff;
+  --bk-text-muted: #8e9bb0;
+  --bk-accent-color: #d48b3b;
+  --bk-accent-bg: #221508;
+  --bk-badge-bg: #2a1b0b;
+  
+  background-color: var(--bk-bg-color);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+  color: var(--bk-text-main);
+  line-height: 1.5;
+  overflow: hidden;
+  padding: 2rem 0;
+}
+
+.bk-section *, .bk-section *:before, .bk-section *:after {
+  box-sizing: inherit;
+}
+
+.bk-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* -----------------------------
+   Left Content Styles
+----------------------------- */
+.bk-content-wrapper {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bk-badge {
+  display: inline-block;
+  background-color: var(--bk-badge-bg);
+  color: var(--bk-accent-color);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  width: max-content;
+  border: 1px solid rgba(212, 139, 59, 0.3);
+}
+
+.bk-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.5px;
+}
+
+.bk-subtitle {
+  color: var(--bk-text-muted);
+  font-size: 1.1rem;
+  margin: 0 0 3rem 0;
+  max-width: 90%;
+}
+
+.bk-features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.bk-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.bk-icon {
+  background-color: var(--bk-accent-bg);
+  color: var(--bk-accent-color);
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: 1px solid rgba(212, 139, 59, 0.2);
+}
+
+.bk-feature-text h3 {
+  margin: 0 0 0.4rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.bk-feature-text p {
+  margin: 0;
+  color: var(--bk-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* -----------------------------
+   Right Orbit System Styles
+----------------------------- */
+.bk-image-wrapper {
+  flex: 1;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  perspective: 1000px; /* Enables 3D JS parallax */
+  padding: 2rem;
+}
+
+.orbit-system {
+  position: relative;
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 1 / 1;
+  transform-style: preserve-3d;
+  transition: transform 0.1s ease-out;
+}
+
+/* Pause animation when user hovers */
+.orbit-system:hover .orbit-ring,
+.orbit-system:hover .orbit-item {
+  animation-play-state: paused;
+}
+
+/* Center Logo */
+.orbit-center {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px; height: 70px;
+  background: var(--bk-bg-color);
+  border: 2px solid var(--bk-accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  color: var(--bk-accent-color);
+  animation: pulse 3s infinite ease-in-out;
+}
+
+/* Concentric Rings */
+.orbit-ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  border: 1px dashed rgba(212, 139, 59, 0.25);
+  border-radius: 50%;
+}
+
+.ring-1 { width: 45%; height: 45%; animation: spin 15s linear infinite; }
+.ring-2 { width: 75%; height: 75%; animation: spin-reverse 25s linear infinite; }
+.ring-3 { width: 105%; height: 105%; animation: spin 35s linear infinite; }
+
+/* Glowing dot on rings */
+.orbit-ring::after {
+  content: '';
+  position: absolute;
+  width: 6px; height: 6px;
+  background: var(--bk-accent-color);
+  border-radius: 50%;
+  top: -3px; left: 50%;
+  box-shadow: 0 0 10px var(--bk-accent-color);
+}
+
+/* Orbiting Items */
+.orbit-item {
+  position: absolute;
+  width: 44px; height: 44px;
+  margin-top: -22px; 
+  margin-left: -22px;
+}
+
+.orbit-icon {
+  width: 100%; height: 100%;
+  background: var(--bk-bg-color);
+  border: 1px solid rgba(212, 139, 59, 0.5);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-main);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.orbit-item:hover .orbit-icon {
+  border-color: var(--bk-accent-color);
+  color: var(--bk-accent-color);
+  box-shadow: 0 0 15px rgba(212, 139, 59, 0.6);
+  transform: scale(1.15);
+}
+
+/* Counter-rotations to keep icons upright */
+.ring-1 .orbit-item { animation: counter-spin 15s linear infinite; }
+.ring-2 .orbit-item { animation: counter-spin-reverse 25s linear infinite; }
+.ring-3 .orbit-item { animation: counter-spin 35s linear infinite; }
+
+/* Placement Math (Top/Left percentages relative to parent ring) */
+.ring-1 .orbit-item:nth-child(1) { top: 50%; left: 100%; }
+
+.ring-2 .orbit-item:nth-child(1) { top: 0%; left: 50%; }
+.ring-2 .orbit-item:nth-child(2) { top: 100%; left: 50%; }
+
+.ring-3 .orbit-item:nth-child(1) { top: 14.6%; left: 14.6%; } /* ~45 deg */
+.ring-3 .orbit-item:nth-child(2) { top: 85.3%; left: 85.3%; } /* ~225 deg */
+.ring-3 .orbit-item:nth-child(3) { top: 85.3%; left: 14.6%; } /* ~135 deg */
+
+/* Animations */
+@keyframes spin { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(360deg); } }
+@keyframes spin-reverse { 0% { transform: translate(-50%, -50%) rotate(0deg); } 100% { transform: translate(-50%, -50%) rotate(-360deg); } }
+@keyframes counter-spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(-360deg); } }
+@keyframes counter-spin-reverse { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px rgba(212, 139, 59, 0.2); }
+  50% { box-shadow: 0 0 30px rgba(212, 139, 59, 0.6), inset 0 0 15px rgba(212, 139, 59, 0.3); }
+  100% { box-shadow: 0 0 10px rgba(212, 139, 59, 0.2); }
+}
+
+/* Desktop layout fixes */
+@media (min-width: 992px) {
+  .bk-container {
+    flex-direction: row;
+    align-items: center;
+  }
+  .bk-content-wrapper {
+    flex: 0 0 55%;
+    padding-right: 4rem;
+  }
+  .bk-image-wrapper {
+    flex: 0 0 45%;
+  }
+  .orbit-system {
+    max-width: 450px;
+  }
+  .bk-title {
+    font-size: 2.8rem;
+  }
+}
+/* -----------------------------
+   Responsive Design
+----------------------------- */
+@media (min-width: 992px) {
+  .bk-container {
+    flex-direction: row;
+  }
+  
+  .bk-content-wrapper {
+    padding: 5rem 4rem 5rem 6%;
+    /* Forces the text to only take up half the screen */
+    max-width: 50%; 
+  }
+  
+  .bk-image-wrapper {
+    /* Ensures the image fills the other half seamlessly */
+    max-width: 50%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .bk-content-wrapper {
+    padding-left: 10%;
+  }
+}
+/*  */
+/* Section Base */
+.fancy-features-section {
+  position: relative;
+  background-color: #060b13; /* ওয়েবসাইটের ডার্ক থিম */
+  padding: 100px 20px;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  color: #fff;
+  z-index: 1;
+}
+
+/* Background Animated Blobs */
+.blob {
+  position: absolute;
+  filter: blur(80px);
+  z-index: -1;
+  opacity: 0.6;
+  animation: floatBlob 10s infinite alternate ease-in-out;
+}
+
+.blob-1 {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(to right, #00f2fe, #4facfe);
+  top: -10%;
+  left: -5%;
+}
+
+.blob-2 {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(to right, #fe0979, #ff5035);
+  bottom: -10%;
+  right: -5%;
+  animation-duration: 12s;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes floatBlob {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(50px, 50px) scale(1.2); }
+}
+
+/* Container & Typography */
+.fancy-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fancy-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.fancy-title span {
+  background: linear-gradient(to right, #f59e0b, #fe0979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fancy-subtitle {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  margin-bottom: 60px;
+}
+
+/* Cards Grid */
+.fancy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+/* 🌟 The Magic: Animated Gradient Border & Glassmorphism */
+.fancy-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 2px; /* বর্ডারের থিকনেস */
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Rotating Gradient Border using Pseudo-element */
+.fancy-card::before {
+  content: "";
+  position: absolute;
+  top: -50%; left: -50%;
+  width: 200%; height: 200%;
+  background: conic-gradient(from 0deg, transparent 70%, #00f2fe 80%, #fe0979 100%);
+  animation: rotateBorder 4s linear infinite;
+  z-index: 1;
+}
+
+@keyframes rotateBorder {
+  100% { transform: rotate(360deg); }
+}
+
+/* Card Inner Content (Glass Effect) */
+.card-inner {
+  position: relative;
+  background: rgba(15, 23, 42, 0.85); /* ডার্ক গ্লাস */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 40px 30px;
+  border-radius: 18px; /* বাইরের বর্ডারের চেয়ে একটু ছোট */
+  height: 100%;
+  z-index: 2;
+  text-align: left;
+}
+
+/* Hover Effect on the whole card */
+.fancy-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 242, 254, 0.15);
+}
+
+.icon-box {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.card-inner h3 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.card-inner p {
+  font-size: 1rem;
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .fancy-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* fancy */
+/* Section Base */
+.comparison-section {
+  padding: 80px 20px;
+  background-color: #0b111a; /* ওয়েবসাইটের ডার্ক থিম */
+  color: #fff;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.comp-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.comp-header p {
+  color: #94a3b8;
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+}
+
+/* Comparison Container */
+.comp-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  margin: 0 auto;
+  border: 4px solid #1e293b;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  background: #fff; /* Base background for mockups */
+}
+
+.mockup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 🛑 Backdated Website Styles (Intentionally Ugly!) */
+.backdated-site {
+  background-color: #000080; /* Classic 90s Blue */
+  color: #ffff00;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.bd-header {
+  background: #c0c0c0;
+  color: #000;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 3px ridge #fff;
+}
+
+.bd-marquee {
+  background: red;
+  color: white;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.bd-body {
+  display: flex;
+  height: calc(100% - 90px);
+}
+
+.bd-sidebar {
+  width: 25%;
+  background: #008080;
+  padding: 15px;
+  border-right: 3px ridge #fff;
+}
+
+.bd-sidebar ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+.bd-sidebar a {
+  color: #00ff00;
+  font-size: 18px;
+}
+
+.bd-content {
+  width: 75%;
+  padding: 20px;
+  background: #000080;
+  text-align: left;
+}
+
+.bd-btn {
+  background: #c0c0c0;
+  border: 3px outset #fff;
+  padding: 5px 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* 🚀 Modern Website Styles */
+.modern-site-wrapper {
+  width: 50%; /* Initial slider position */
+  overflow: hidden;
+  border-right: 2px solid #f59e0b;
+  z-index: 2;
+}
+
+.modern-site {
+  width: 900px; /* Must match the max-width of .comp-container */
+  height: 100%;
+  background: #0f172a;
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.mod-nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.mod-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.mod-logo span { color: #f59e0b; }
+
+.mod-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+.mod-hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 60px;
+  text-align: left;
+}
+
+.mod-hero h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.mod-hero h1 span {
+  background: linear-gradient(to right, #f59e0b, #fe0979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.mod-hero p {
+  color: #94a3b8;
+  max-width: 500px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.mod-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.mod-btn-primary {
+  background: #f59e0b;
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.mod-btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #cbd5e1;
+  padding: 12px 24px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* 🎚️ Slider Handle Styles */
+.comp-slider-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background-color: #f59e0b;
+  z-index: 3;
+  cursor: ew-resize;
+  transform: translateX(-50%);
+}
+
+.slider-arrows {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background-color: #f59e0b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .modern-site {
+    width: 100vw; /* On mobile, width becomes full viewport */
+  }
+}
+
+/* see the difference */
+/* -----------------------------
+   Section & Typography
+----------------------------- */
+.bk-transform-section {
+  --bk-bg-dark: #050810;
+  --bk-card-header-bg: #212836;
+  --bk-card-bg: #141a25;
+  --bk-text-main: #ffffff;
+  --bk-text-muted: #8e9bb0;
+  
+  background-color: var(--bk-bg-dark);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 5rem 2rem;
+  color: var(--bk-text-main);
+  box-sizing: border-box;
+}
+
+.bk-transform-section *, .bk-transform-section *:before, .bk-transform-section *:after {
+  box-sizing: inherit;
+}
+
+.bk-transform-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bk-transform-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.bk-transform-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.5px;
+}
+
+.bk-transform-header p {
+  color: var(--bk-text-muted);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* -----------------------------
+   Grid & Cards
+----------------------------- */
+.bk-transform-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .bk-transform-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.bk-transform-card {
+  background-color: var(--bk-card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.bk-card-title {
+  background-color: var(--bk-card-header-bg);
+  padding: 1.25rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+/* -----------------------------
+   Before/After Slider Logic
+----------------------------- */
+.bk-slider-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3; /* Controls the height of the image area */
+  overflow: hidden;
+}
+
+.bk-image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bk-img-bg, .bk-img-fg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none; /* Prevents images from blocking the range input */
+}
+
+/* The magic: Clipping the foreground (Before) image based on the slider position */
+.bk-img-fg {
+  clip-path: polygon(0 0, var(--position) 0, var(--position) 100%, 0 100%);
+}
+
+/* -----------------------------
+   Badges / Labels
+----------------------------- */
+.bk-label {
+  position: absolute;
+  top: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  pointer-events: none;
+  z-index: 5;
+  backdrop-filter: blur(4px);
+}
+
+.bk-label-left {
+  left: 1.5rem;
+}
+
+.bk-label-right {
+  right: 1.5rem;
+}
+
+/* -----------------------------
+   Slider Handle & Line
+----------------------------- */
+.bk-slider-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--position);
+  width: 2px;
+  background-color: white;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.bk-slider-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.bk-slider-button svg {
+  margin: -4px; /* Pulls the two arrows slightly closer together */
+}
+
+/* -----------------------------
+   Invisible Range Input
+----------------------------- */
+.bk-range-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Make it invisible but still clickable */
+  cursor: ew-resize;
+  z-index: 20;
+  margin: 0;
+}
+
+/* Standardize range input across browsers to ensure edge-to-edge swiping */
+.bk-range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 40px; /* Match the visual button width */
+  height: 100px;
+}
+
+.bk-range-slider::-moz-range-thumb {
+  width: 40px;
+  height: 100px;
+  border: none;
+}
+/* tools we use */
+/* Tech Stack Section Base */
+.tech-stack-section {
+  background-color: #0b111a; /* আপনার ওয়েবসাইটের ডার্ক থিম */
+  padding: 80px 0;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.tech-header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 0 20px;
+}
+
+.tech-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.tech-header p {
+  color: #94a3b8;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Marquee Container */
+.marquee-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Fading Edges for a professional look */
+.marquee-container::before,
+.marquee-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marquee-container::before {
+  left: 0;
+  background: linear-gradient(to right, #0b111a 0%, transparent 100%);
+}
+
+.marquee-container::after {
+  right: 0;
+  background: linear-gradient(to left, #0b111a 0%, transparent 100%);
+}
+
+/* Infinite Scroll Animation Track */
+.marquee-content {
+  display: flex;
+  flex-shrink: 0;
+  gap: 30px;
+  padding-right: 30px;
+  animation: scrollLeft 25s linear infinite;
+}
+
+/* Pause animation on hover */
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+/* Individual Tech Items */
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #1e293b;
+  padding: 15px 25px;
+  border-radius: 50px; /* ক্যাপসুলের মতো শেপ */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.tech-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(245, 158, 11, 0.2); /* হলুদ/কমলা শ্যাডো */
+  border-color: #f59e0b;
+}
+
+.tech-item img {
+  width: 35px;
+  height: 35px;
+}
+
+.tech-item span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  white-space: nowrap;
+}
+
+/* The Magic Keyframes */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .tech-header h2 {
+    font-size: 2rem;
+  }
+  .marquee-container::before,
+  .marquee-container::after {
+    width: 60px; /* মোবাইলে ফেড ইফেক্ট একটু ছোট হবে */
+  }
+  .tech-item {
+    padding: 12px 20px;
+  }
+  .tech-item img {
+    width: 28px;
+    height: 28px;
+  }
+  .tech-item span {
+    font-size: 0.95rem;
+  }
+}
+/* FAQ */
+.faq-section {
+  background-color: #0b111a;
+  padding: 80px 20px;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-header h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.faq-header p {
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background-color: #1e293b;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: left;
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.faq-question:hover, .faq-question.active {
+  color: #f59e0b;
+}
+
+.faq-icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.faq-question.active .faq-icon {
+  transform: rotate(45deg); /* ক্লিক করলে '+' আইকনটি ঘুরে 'x' হয়ে যাবে */
+}
+
+/* উত্তরের অংশটি ডিফল্টভাবে লুকানো থাকবে */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-in-out;
+  background-color: #172033;
+}
+
+.faq-answer p {
+  padding: 0 20px 20px 20px;
+  color: #94a3b8;
+  line-height: 1.6;
+  margin: 0;
+}
+/* contact us */
+/* -----------------------------
+   CTA Section Variables & Base
+----------------------------- */
+.bk-cta-section {
+  --bk-cta-bg: #131923; /* Dark slate blue */
+  --bk-cta-text-main: #ffffff;
+  --bk-cta-text-muted: #8e9bb0;
+  --bk-cta-accent: #f59e0b; /* Yellow/Orange */
+  --bk-cta-accent-hover: #d97706;
+  --bk-cta-border: #374151;
+  
+  position: relative;
+  background-color: var(--bk-cta-bg);
+  /* Slight radial gradient to mimic the lighting in the image */
+  background-image: radial-gradient(circle at center, #1b2330 0%, #131923 70%);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 6rem 1.5rem;
+  color: var(--bk-cta-text-main);
+  text-align: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.bk-cta-section *, .bk-cta-section *:before, .bk-cta-section *:after {
+  box-sizing: inherit;
+}
+
+.bk-cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* -----------------------------
+   Typography & Icons
+----------------------------- */
+.bk-cta-icon {
+  color: var(--bk-cta-accent);
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.bk-cta-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin: 0 0 1.25rem 0;
+  letter-spacing: -0.5px;
+}
+
+.bk-cta-subtitle {
+  color: var(--bk-cta-text-muted);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 auto 3rem auto;
+  max-width: 600px;
+}
+
+/* -----------------------------
+   Buttons
+----------------------------- */
+.bk-cta-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (min-width: 576px) {
+  .bk-cta-actions {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+}
+
+.bk-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .bk-btn {
+    width: auto;
+  }
+}
+
+.bk-btn-primary {
+  background-color: var(--bk-cta-accent);
+  color: #000000;
+  border: 1px solid var(--bk-cta-accent);
+}
+
+.bk-btn-primary:hover {
+  background-color: var(--bk-cta-accent-hover);
+  border-color: var(--bk-cta-accent-hover);
+}
+
+.bk-btn-secondary {
+  background-color: transparent;
+  color: var(--bk-cta-text-main);
+  border: 1px solid var(--bk-cta-border);
+}
+
+.bk-btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: #556075;
+}
+
+/* -----------------------------
+   Barber Pole Decoration
+----------------------------- */
+/* Footer Base Styles */
+.compact-footer {
+  background-color: #0b111a; /* ডার্ক থিম */
+  color: #cbd5e1;
+  font-family: Arial, sans-serif;
+  padding-top: 50px;
+  border-top: 1px solid #1e293b;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr; /* ৩টি কলামের রেশিও */
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+/* Brand Section */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.footer-logo span span {
+  color: #f59e0b; /* হলুদ/কমলা কালার */
+}
+
+.footer-brand p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin-bottom: 20px;
+  max-width: 320px;
+}
+
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: #1e293b;
+  color: #cbd5e1;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: #f59e0b;
+  color: #ffffff;
+}
+
+/* Headings */
+.compact-footer h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Links & Lists */
+.footer-links ul, .footer-contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 12px;
+}
+
+.footer-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #f59e0b;
+}
+
+.footer-contact li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+/* Bottom Bar */
+.footer-bottom {
+  border-top: 1px solid #1e293b;
+  padding: 20px 20px;
+  position: relative;
+}
+
+.bottom-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.bottom-links a {
+  color: #64748b;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.bottom-links a:hover {
+  color: #cbd5e1;
+}
+
+/* Scroll to Top Button */
+.scroll-top-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 45px;
+  height: 45px;
+  background-color: #f59e0b;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+  background-color: #d97706;
+  transform: translateY(-3px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr; /* মোবাইলে সব এক কলামে আসবে */
+    gap: 30px;
+  }
+  .bottom-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  .bottom-links a {
+    margin: 0 10px;
+  }
+  .scroll-top-btn {
+    bottom: 80px; /* মোবাইলে বাটনটি একটু উপরে থাকবে */
+  }
+}
+
 @keyframes rotate {
     0% {transform: rotate(0deg);}
     100% {transform: rotate(360deg);}
@@ -136,4 +1649,9 @@ font-size: 1.2em;
     10% {transform:translateY(0px); opacity: 100%;}
     90% {transform:translateY(0px); opacity: 100%;}
     100% {transform:translateY(5px); opacity: 0%;}
+}
+@keyframes stroke1{
+    to{
+    stroke-dashoffset: 0; /* Fully visible */
+  }
 }
